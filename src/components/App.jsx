@@ -1,16 +1,16 @@
+import Header from './Header/Header';
+// import ContactsFilter from './Filter/Filter';
+import ContactsList from './ContactsList/ContactsList';
+// import Contact from './Contact/Contact';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <Header></Header>
+      {/* <ContactsFilter /> */}
+
+      <ContactsList />
+      {/* <Contact /> */}
     </div>
   );
 };
