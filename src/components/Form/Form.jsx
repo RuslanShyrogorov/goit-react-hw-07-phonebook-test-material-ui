@@ -2,10 +2,8 @@
 // import { useDispatch } from 'react-redux';
 // import { addContact } from 'redux/contactsSlice';
 
-// import Button from 'components/Button/Button';
-
 import { Button, Container, TextField } from '@mui/material';
-import React from 'react';
+import Tooltip from '@mui/material/Tooltip';
 
 export default function Form() {
   // const [name, setName] = useState('');
@@ -38,18 +36,20 @@ export default function Form() {
   };
 
   return (
-    <Container sx={{ display: 'flex' }} onSubmit={handleSubmit}>
+    <Container
+      component={'div'}
+      sx={{ display: 'flex', flexDirection: 'column' }}
+      onSubmit={handleSubmit}
+    >
       <TextField
         sx={{
-          mr: 1,
+          mb: 1,
           width: '320px',
-          // height: '40px',
-          backgroundColor: 'white',
         }}
         size="small"
         id="standard-basic"
         label="Name"
-        variant="filled"
+        variant="outlined"
         type="text"
         name="name"
         // value={name}
@@ -61,15 +61,15 @@ export default function Form() {
 
       <TextField
         sx={{
-          mr: 1,
+          mb: 1,
           width: '320px',
           // height: '40px',
-          backgroundColor: 'white',
+          // backgroundColor: 'white',
         }}
         size="small"
         id="standard-basic"
         label="Number"
-        variant="filled"
+        variant="outlined"
         type="tel"
         name="number"
         // value={number}
@@ -78,14 +78,16 @@ export default function Form() {
         required
         onChange={handleChange}
       />
-
-      <Button
-        type="text"
-        variant="outlined"
-        // sx={{ color: 'white', border: '1px solid white' }}
-      >
-        Add contact
-      </Button>
+      <Tooltip title="Add" placement="bottom">
+        <Button
+          type="text"
+          variant="outlined"
+          size="medium"
+          sx={{ minWidth: '132px' }}
+        >
+          Add contact
+        </Button>
+      </Tooltip>
     </Container>
   );
 }

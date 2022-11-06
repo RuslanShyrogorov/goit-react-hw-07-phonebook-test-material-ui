@@ -1,7 +1,5 @@
-// import * as React from 'react';
-import Box from '@mui/material/Box';
-// import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import { Box, Modal } from '@mui/material';
+
 import Form from 'components/Form/Form';
 
 const style = {
@@ -11,7 +9,6 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 400,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
   boxShadow: 24,
   p: 4,
 };
@@ -20,6 +17,7 @@ export default function BasicModal({ open, handleClose }) {
   return (
     <div>
       <Modal
+        component={'form'}
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
